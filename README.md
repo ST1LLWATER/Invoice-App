@@ -257,7 +257,7 @@ User needs to provide name and balances of three years as specified in assignmen
     ],
     "invoiceNumber": "INV-2023-03",
     "totalAmount": 600,
-    "year": "year"
+    "year": "2023-24"
   }
 ]
 ```

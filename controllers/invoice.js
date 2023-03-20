@@ -73,7 +73,7 @@ exports.listInvoice = async (req, res) => {
           invoiceNumber: { $first: '$invoiceNumber' },
           totalAmount: { $first: '$totalAmount' },
           totalAmountStr: { $first: '$totalAmountStr' },
-          year: { $first: 'year' },
+          year: { $first: '$year' },
         },
       },
       {
@@ -120,7 +120,7 @@ exports.listInvoice = async (req, res) => {
           accountArray: { $push: '$accountArray' },
           invoiceNumber: { $first: '$invoiceNumber' },
           totalAmount: { $first: '$totalAmount' },
-          year: { $first: 'year' },
+          year: { $first: '$year' },
         },
       },
     ];
