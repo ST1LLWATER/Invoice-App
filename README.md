@@ -226,7 +226,7 @@ User needs to provide name and balances of three years as specified in assignmen
 {
   "skip": 0,
   "limit": 10,
-  "search": "Call"
+  "search": "Ak"
 }
 ```
 
@@ -235,76 +235,29 @@ User needs to provide name and balances of three years as specified in assignmen
 ```json
 [
   {
-    "_id": "6417f23737d02e3f0b2d4c2c",
+    "_id": "64181f4dfd0b8ae43f6d181c",
+    "customerId": "64181efffd0b8ae43f6d1804",
+    "createdAt": "createdAt",
     "date": "2022-03-20T00:00:00.000Z",
-    "customerId": {
-      "_id": "6417f20b37d02e3f0b2d4c2a",
-      "name": "Callaghan"
-    },
     "accountArray": [
       {
-        "accountId": "6417f1ff37d02e3f0b2d4c28",
-        "amount": 100
+        "accountId": {
+          "_id": "64181f0dfd0b8ae43f6d1806",
+          "name": "Akash"
+        },
+        "amount": 300
       },
       {
-        "accountId": "6417f20b37d02e3f0b2d4c2a",
-        "amount": 100
+        "accountId": {
+          "_id": "64181f0dfd0b8ae43f6d1806",
+          "name": "Akash"
+        },
+        "amount": 300
       }
     ],
-    "totalAmount": 200,
-    "invoiceNumber": "INV-2023-01",
-    "year": "2023-24",
-    "createdAt": "2023-03-20T05:42:15.814Z",
-    "updatedAt": "2023-03-20T05:42:15.814Z",
-    "__v": 0
-  },
-  {
-    "_id": "6417f34e37d02e3f0b2d4c39",
-    "date": "2022-03-20T00:00:00.000Z",
-    "customerId": {
-      "_id": "6417f20b37d02e3f0b2d4c2a",
-      "name": "Callaghan"
-    },
-    "accountArray": [
-      {
-        "accountId": "6417f1ff37d02e3f0b2d4c28",
-        "amount": 100
-      },
-      {
-        "accountId": "6417f20b37d02e3f0b2d4c2a",
-        "amount": 100
-      }
-    ],
-    "totalAmount": 200,
-    "invoiceNumber": "INV-2023-02",
-    "year": "2023-24",
-    "createdAt": "2023-03-20T05:46:54.072Z",
-    "updatedAt": "2023-03-20T05:46:54.072Z",
-    "__v": 0
-  },
-  {
-    "_id": "6417f670c6798bd253c9a2c6",
-    "date": "2022-03-20T00:00:00.000Z",
-    "customerId": {
-      "_id": "6417f20b37d02e3f0b2d4c2a",
-      "name": "Callaghan"
-    },
-    "accountArray": [
-      {
-        "accountId": "6417f1ff37d02e3f0b2d4c28",
-        "amount": 100
-      },
-      {
-        "accountId": "6417f20b37d02e3f0b2d4c2a",
-        "amount": 100
-      }
-    ],
-    "totalAmount": 200,
-    "invoiceNumber": "INV-2023-0",
-    "year": "2023-24",
-    "createdAt": "2023-03-20T06:00:16.965Z",
-    "updatedAt": "2023-03-20T06:00:16.965Z",
-    "__v": 0
+    "invoiceNumber": "INV-2023-03",
+    "totalAmount": 600,
+    "year": "year"
   }
 ]
 ```
