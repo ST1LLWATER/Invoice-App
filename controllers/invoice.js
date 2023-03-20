@@ -35,18 +35,18 @@ exports.listInvoice = async (req, res) => {
 
     const searchQuery = [
       {
+        $unwind: '$accountArray',
+      },
+      {
         $lookup: {
           from: 'accounts',
-          localField: 'customerId',
+          localField: 'accountArray.accountId',
           foreignField: '_id',
           as: 'customer',
         },
       },
       {
         $unwind: '$customer',
-      },
-      {
-        $unwind: '$accountArray',
       },
       {
         $addFields: {
@@ -130,7 +130,7 @@ exports.listInvoice = async (req, res) => {
       .limit(parseInt(limit));
 
     await Invoice.populate(invoices, {
-      path: 'customerId',
+      path: 'accountArray.accountId',
       select: { name: 1 },
     });
 
