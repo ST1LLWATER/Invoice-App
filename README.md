@@ -196,6 +196,8 @@ User needs to provide name and balances of three years as specified in assignmen
 
 > - [x] After saving entry, the amount in all accounts in accountarray should be incremented with the respective amount for the concerned year for the account id provided.
 
+`All validations are done in schema in /model/Invoice.js file`
+
 <br>
 <hr>
 <br>
@@ -322,3 +324,7 @@ The searched field can be subset of user's name too._**
 - [x] Searching 200 also returns invocies with 2000, 20001.
 - [x] Searching 200.00 matches 200.
 - [x] Searching by fractions is possible too like 200.50. (Covered Edge Case Created For Matching 200.00 with 200)
+
+> P.S. Search Instructions were a but unclear on Search part as on which amount the search is to be made and on names of which account id i.e customer or ids in account array but i've done all search critera for filters hence in case of any chaneges required can be updated right away.
+
+# Thank You
