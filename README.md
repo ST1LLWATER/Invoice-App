@@ -320,7 +320,7 @@ The searched field can be subset of user's name too._**
 
 - [x] Search by amount of invoice (totalAmount field).
 
-  - [x] Partially Matched Search By Amount (Total Amount & Amount in Account Array Both!)
+  - [x] Partially Matched Search By Both Amount in Account Array & Total Amount
   - [x] Searching 200 also returns invocies with 2000, 20001.
   - [x] Searching 200.00 matches 200.
   - [x] Searching by fractions is possible too like 200.50. (Covered Edge Case Created For Matching 200.00 with 200)
