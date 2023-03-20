@@ -4,12 +4,12 @@ This is a backend internship assignment for RapidBooks
 
 ### **`Features`**
 
-> - [x] Indexed fields for faster access on frequently required fields.
-> - [x] Optimized searches by Aggregate queries for better performance, flexibility and making it easy to understand by anyone due to pipeline processing nature of it.
-> - [x] Edge Case Handling for Search Requirements.
-> - [x] Proper validations at schema level to ensure data integrity.
-> - [x] Proper error messages to understand issues with ease.
-> - [x] Docker-compose for smooth deployments when required.
+- [x] Indexed fields for faster access on frequently required fields.
+- [x] Optimized searches by Aggregate queries for better performance, flexibility and making it easy to understand by anyone due to pipeline processing nature of it.
+- [x] Edge Case Handling for Search Requirements.
+- [x] Proper validations at schema level to ensure data integrity.
+- [x] Proper error messages to understand issues with ease.
+- [x] Docker-compose for smooth deployments when required.
 
 ## `Account API`
 
@@ -64,13 +64,13 @@ User needs to provide name and balances of three years as specified in assignmen
 
 `When Omitted:`
 
-```json
+````json
 {
   "error": [
     "You should provide three financial year balances from 2022 i.e 2022-23, 2023-24, 2024-25."
   ]
 }
-```
+
 
 - [x] All fields are required.
 
@@ -106,7 +106,7 @@ User needs to provide name and balances of three years as specified in assignmen
   "invoiceNumber": "INV-2023-06",
   "year": "2023-24"
 }
-```
+````
 
 `Response Json`
 
@@ -140,9 +140,9 @@ User needs to provide name and balances of three years as specified in assignmen
 
 ### **`Validations/Tasks Fulfilled`**
 
-> - [x] All fields are compulsory
+- [x] All fields are compulsory
 
-> - [x] Total of amount in AccountArray should be equal to Total Amount.
+- [x] Total of amount in AccountArray should be equal to Total Amount.
 
 `When Sum Doesn't Match:`
 
@@ -154,7 +154,7 @@ User needs to provide name and balances of three years as specified in assignmen
 }
 ```
 
-> - [x] Account array should have at least one object.
+- [x] Account array should have at least one object.
 
 `When No Objects Is Passed In Account Array:`
 
@@ -164,7 +164,7 @@ User needs to provide name and balances of three years as specified in assignmen
 }
 ```
 
-> - [x] All accountId should be present in DB.
+- [x] All accountId should be present in DB.
 
 `When Customer ID Doenst Exist:`
 
@@ -184,7 +184,7 @@ User needs to provide name and balances of three years as specified in assignmen
 }
 ```
 
-> - [x] Same invoice number should not be already present for the same year.
+- [x] Same invoice number should not be already present for the same year.
 
 `When same number invoice exists for same year:`
 
@@ -194,7 +194,7 @@ User needs to provide name and balances of three years as specified in assignmen
 }
 ```
 
-> - [x] After saving entry, the amount in all accounts in accountarray should be incremented with the respective amount for the concerned year for the account id provided.
+- [x] After saving entry, the amount in all accounts in accountarray should be incremented with the respective amount for the concerned year for the account id provided.
 
 `All validations are done in schema in /model/Invoice.js file`
 
@@ -208,11 +208,11 @@ User needs to provide name and balances of three years as specified in assignmen
 
 ### **`Features`**
 
-> - [x] Indexed User Names, Invoice Numbers & Amounts for optimized and fast searches
-> - [x] Not passing skip defaults to 0
-> - [x] Not passing limit defaults to 10
-> - [x] Not passing search, returns all invoices
-> - [x] Populated customer id with names on response for smoother integration
+- [x] Indexed User Names, Invoice Numbers & Amounts for optimized and fast searches
+- [x] Not passing skip defaults to 0
+- [x] Not passing limit defaults to 10
+- [x] Not passing search, returns all invoices
+- [x] Populated customer id with names on response for smoother integration
 
 `Request Body`
 
@@ -311,19 +311,19 @@ User needs to provide name and balances of three years as specified in assignmen
 
 ### **`Validations/Tasks Fulfilled`**
 
-> - [x] Searches By Invoice Number
+- [x] Searches By Invoice Number
 
-> - [x] Case insesitive fuzzy invoice search by Customer's names.
+- [x] Case insesitive fuzzy invoice search by Customer's names.
 
 **_For Eg: If Customer's Name is John, Searching Joh Will also return the invoice, this is fuzzy search implementation.
 The searched field can be subset of user's name too._**
 
-> - [x] Search by amount of invoice (totalAmount field).
+- [x] Search by amount of invoice (totalAmount field).
 
-- [x] Partially Matched Search By Amount
-- [x] Searching 200 also returns invocies with 2000, 20001.
-- [x] Searching 200.00 matches 200.
-- [x] Searching by fractions is possible too like 200.50. (Covered Edge Case Created For Matching 200.00 with 200)
+  - [x] Partially Matched Search By Amount
+  - [x] Searching 200 also returns invocies with 2000, 20001.
+  - [x] Searching 200.00 matches 200.
+  - [x] Searching by fractions is possible too like 200.50. (Covered Edge Case Created For Matching 200.00 with 200)
 
 > P.S. Search Instructions were a but unclear on Search part as on which amount the search is to be made and on names of which account id i.e customer or ids in account array but i've done all search critera for filters hence in case of any chaneges required can be updated right away.
 
