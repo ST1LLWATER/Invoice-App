@@ -1,10 +1,13 @@
 const express = require('express');
 const db = require('./config/database');
+require('dotenv').config();
 
 const accountRoutes = require('./routes/account');
 const invoiceRoutes = require('./routes/invoice');
 
 const app = express();
+
+console.log(process.env.DB_URL);
 
 const PORT = process.env.PORT || 3000;
 

@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 // Set up default Mongoose connection
-const mongoDB = 'mongodb://localhost/invoice_app';
+const mongoDB = process.env.DB_URL || 'mongodb://localhost/invoice_app';
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Get the default Mongoose connection

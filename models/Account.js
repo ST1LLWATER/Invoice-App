@@ -1,15 +1,20 @@
 const mongoose = require('mongoose');
 
-const balanceSchema = new mongoose.Schema({
-  year: {
-    type: String,
-    required: true,
+const balanceSchema = new mongoose.Schema(
+  {
+    year: {
+      type: String,
+      required: true,
+    },
+    balance: {
+      type: Number,
+      required: true,
+    },
   },
-  balance: {
-    type: Number,
-    required: true,
-  },
-});
+  {
+    _id: false,
+  }
+);
 
 const accountSchema = new mongoose.Schema({
   name: {
@@ -40,6 +45,8 @@ const accountSchema = new mongoose.Schema({
     ],
   },
 });
+
+accountSchema.index({ name: 'text' });
 
 const Account = mongoose.model('Account', accountSchema);
 

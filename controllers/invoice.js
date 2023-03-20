@@ -89,6 +89,10 @@ exports.listInvoice = async (req, res) => {
       select: { name: 1 },
     });
 
+    if (invoices.length === 0) {
+      return res.status(404).json({ message: 'No invoices found' });
+    }
+
     res.json(invoices);
   } catch (err) {
     console.error(err);

@@ -55,11 +55,13 @@ const invoiceSchema = new mongoose.Schema(
     totalAmount: {
       type: Number,
       required: true,
+      index: true,
     },
     invoiceNumber: {
       type: String,
       required: true,
       unique: true,
+      index: true,
     },
     year: {
       type: String,
@@ -79,7 +81,7 @@ invoiceSchema
       return !!account;
     },
     (props) =>
-      `Account ID ${props.value} specified in account array does not exist. (Account ID not found)`
+      `Account ID specified in account array does not exist. (Account ID not found)`
   );
 
 // Validation to check if invoice number is unique for the same year
