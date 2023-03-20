@@ -2,6 +2,7 @@ const express = require('express');
 const db = require('./config/database');
 
 const accountRoutes = require('./routes/account');
+const invoiceRoutes = require('./routes/invoice');
 
 const app = express();
 
@@ -12,6 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use('/api', accountRoutes);
+app.use('/api', invoiceRoutes);
 // Start the server
 
 // Connect to the database
