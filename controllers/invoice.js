@@ -46,6 +46,16 @@ exports.listInvoice = async (req, res) => {
         $unwind: '$customer',
       },
       {
+        $unwind: '$accountArray',
+      },
+      {
+        $addFields: {
+          'accountArray.amountStr': {
+            $toString: '$accountArray.amount',
+          },
+        },
+      },
+      {
         $addFields: {
           totalAmountStr: {
             $toString: '$totalAmount',
@@ -53,8 +63,27 @@ exports.listInvoice = async (req, res) => {
         },
       },
       {
+        $group: {
+          _id: '$_id',
+          customerId: { $first: '$customerId' },
+          createdAt: { $first: 'createdAt' },
+          customer: { $first: '$customer' },
+          date: { $first: '$date' },
+          accountArray: { $push: '$accountArray' },
+          invoiceNumber: { $first: '$invoiceNumber' },
+          totalAmount: { $first: '$totalAmount' },
+          totalAmountStr: { $first: '$totalAmountStr' },
+          year: { $first: 'year' },
+        },
+      },
+      {
         $match: {
           $or: [
+            {
+              'accountArray.amountStr': {
+                $regex: RegExp(`^${searchAmount}`),
+              },
+            },
             {
               totalAmountStr: {
                 $regex: RegExp(`^${searchAmount}`),
@@ -73,9 +102,25 @@ exports.listInvoice = async (req, res) => {
         },
       },
       {
+        $unwind: '$accountArray',
+      },
+      {
         $project: {
-          totalAmountStr: 0,
+          'accountArray.amountStr': 0,
           customer: 0,
+          totalAmountStr: 0,
+        },
+      },
+      {
+        $group: {
+          _id: '$_id',
+          customerId: { $first: '$customerId' },
+          createdAt: { $first: 'createdAt' },
+          date: { $first: '$date' },
+          accountArray: { $push: '$accountArray' },
+          invoiceNumber: { $first: '$invoiceNumber' },
+          totalAmount: { $first: '$totalAmount' },
+          year: { $first: 'year' },
         },
       },
     ];
