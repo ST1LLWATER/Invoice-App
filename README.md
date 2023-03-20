@@ -64,13 +64,13 @@ User needs to provide name and balances of three years as specified in assignmen
 
 `When Omitted:`
 
-````json
+```json
 {
   "error": [
     "You should provide three financial year balances from 2022 i.e 2022-23, 2023-24, 2024-25."
   ]
 }
-
+```
 
 - [x] All fields are required.
 
@@ -106,7 +106,7 @@ User needs to provide name and balances of three years as specified in assignmen
   "invoiceNumber": "INV-2023-06",
   "year": "2023-24"
 }
-````
+```
 
 `Response Json`
 
