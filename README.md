@@ -266,7 +266,7 @@ User needs to provide name and balances of three years as specified in assignmen
 
 - [x] Searches By Invoice Number
 
-- [x] Case insesitive fuzzy invoice search by names of IDs in Account Array.
+- [x] Case insesitive fuzzy invoice search by user's names belonging to IDs in Account Array.
 
 **_For Eg: If Customer's Name is John, Searching Joh Will also return the invoice, this is fuzzy search implementation.
 The searched field can be subset of user's name too._**
