@@ -58,7 +58,7 @@ This is a backend internship assignment for RapidBooks
 
 User needs to provide name and balances of three years as specified in assignment.
 
-### **`Validations Fulfilled`**
+### **`Validations`**
 
 - [x] Must provide balances from 2022 till 2025.
 
@@ -138,7 +138,7 @@ User needs to provide name and balances of three years as specified in assignmen
 
 <br>
 
-### **`Validations/Tasks Fulfilled`**
+### **`Validations`**
 
 - [x] All fields are compulsory
 
@@ -262,7 +262,7 @@ User needs to provide name and balances of three years as specified in assignmen
 ]
 ```
 
-### **`Validations/Tasks Fulfilled`**
+### **`Validations`**
 
 - [x] Searches By Invoice Number
 
