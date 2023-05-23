@@ -1,6 +1,4 @@
-# RapidBooks Invoice API
-
-This is a backend internship assignment for RapidBooks
+# Invoice-App-Backend APIs
 
 ### **`Features`**
 
